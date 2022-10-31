@@ -15,6 +15,7 @@ struct Task {
     string title;
     string description;
     Status status;
+    bool set;
 }
 mapping(uint256 => Task) tasks;
 
@@ -28,7 +29,8 @@ function addTask(uint256 id, string memory title, string memory description) pub
     tasks[id] = Task({
         title: title,
         description: description,
-        status: Status.TODO
+        status: Status.TODO,
+        set: true
     });
 }
 }
